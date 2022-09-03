@@ -104,6 +104,10 @@ const displayNewsDetails = news => {
     `;
 }
 
+const displayQuestions = () => {
+    window.location = "question.html";
+}
+
 
 
 
