@@ -5,14 +5,17 @@ const loadCategories = async () => {
 }
 
 const newsCategory = async () => {
-    // console.log(loadCategories());
-    // loadCategories()
-    //     .then(data => console.log(data.data.news_category))
 
     const data = await loadCategories();
-    // console.log(data.data.news_category)
+
+    const categories = document.getElementById('all-categories');
+
     for (const news of data.data.news_category) {
-        console.log(news.category_name);
+        // console.log(news.category_name);
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="" class="text-muted text-decoration-none fw-bold ">${news.category_name}</a>
+        `;
+        categories.appendChild(li);
     }
 }
 newsCategory()
