@@ -20,8 +20,9 @@
                     <a class="navbar-brand"><Span class="bg-primary py-2 px-2 rounded-2 text-white fw-bold">Daily</Span>
                         <span class="text-primary fw-bold">News</span></a>
                     <div class="d-flex">
-                        <a href="" class="text-primary text-decoration-none pe-4 fw-bold">News</a>
-                        <a href="" class="text-muted text-decoration-none pe-4 fw-bold">Blog</a>
+                        <a href="" class="text-primary text-decoration-none pe-4 fw-bold pt-2">News</a>
+                        <button href=""
+                            class="text-muted text-decoration-none pe-4 fw-bold btn btn-light ">Blog</button>
                         <img class="" src="images/Avatar.png" alt="">
                     </div>
                 </div>
@@ -40,7 +41,7 @@
         </div>
 
         <section class="mt-5 bg-white py-3 ps-4 rounded-3">
-            <h5>4 items found for category Entertainment</h5>
+            <h5><span id="news-number">4</span> items found for this category</h5>
         </section>
 
         <section class="mt-4">
@@ -64,6 +65,14 @@
 
         <section id="deatil-container" class="mt-5">
 
+        </section>
+
+        <section class="d-none" id="loader">
+            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </section>
 
         <!-- modal -->

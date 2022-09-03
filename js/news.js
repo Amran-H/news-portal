@@ -8,7 +8,6 @@ loadCategories();
 const displayCategories = news_category => {
     const allCategories = document.getElementById('all-categories');
     news_category.forEach(categories => {
-        // console.log(categories);
         const newsLi = document.createElement('li');
         newsLi.innerHTML = `<li onclick="loadNews(${categories.category_id})"> 
        <button href="" class="text-muted text-decoration-none fw-bold btn btn-light">${categories.category_name}</button> </li>
@@ -18,9 +17,7 @@ const displayCategories = news_category => {
 }
 
 const loadNews = (category_id) => {
-    // console.log(category_id);
     const url = ` https://openapi.programming-hero.com/api/news/category/0${category_id}`
-    // console.log(url);
 
     fetch(url)
         .then(res => res.json())
@@ -28,13 +25,19 @@ const loadNews = (category_id) => {
 }
 loadNews(05);
 
+const displayNewsNumbers = data => {
+
+
+
+}
+
+
 const displayNews = data => {
     const detailContainer = document.getElementById('deatil-container');
     detailContainer.innerHTML = ``;
+
     data.forEach(news => {
 
-
-        // console.log(news);
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('card');
         newsDiv.classList.add('mb-4');
@@ -76,7 +79,9 @@ const displayNews = data => {
         `;
 
         detailContainer.appendChild(newsDiv);
-    })
+        // news.sort(function (a, b) { return b.total_view - ba.total_view });
+    });
+
 }
 
 const loadNewsDetails = async news_id => {
@@ -98,6 +103,8 @@ const displayNewsDetails = news => {
     <P>Details:<br> ${news.details}</P>
     `;
 }
+
+
 
 
 
